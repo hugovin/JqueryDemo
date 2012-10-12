@@ -48,16 +48,18 @@
 						 <span id="spanEmailError" class="help-inline hide">Invalid email</span>
 					</div>
 				</div>
-				<div class="control-group">
+				<div id="passwordControl" class="control-group">
 					<label class="control-label " for="inputPassword">Password</label>
 					<div class="controls ">
 						<input type="password" id="inputPassword" placeholder="Password">
+						<span id="spanPasswordError" class="help-inline hide">Invalid Password</span>
 						<a href="#" class="help-block">Forgot Password?</a>
 					</div>
 				</div>
 				<div class="control-group">
 				<div class="controls">					
 					<button id="btnSignIn" class="btn">Sign in</button>
+					<span id="spanAccountError" class="help-inline hide error">Invalid Email/Password</span>
 				</div>
 				<hr/>
 				<div class="row offset3">
@@ -76,6 +78,7 @@
 
         <script src="resources/js/main.js"></script>
         <script src="resources/js/Login.js"></script>
+        <script src="resources/js/utils.js"></script>
 
         
     </body>

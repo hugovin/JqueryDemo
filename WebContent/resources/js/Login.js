@@ -14,7 +14,7 @@ function BindActions(){
 }
 
 function DoSignIn(){
-	if(ValidateEmail())
+	if(ValidateEmail() && ValidatePassword())
 	{
 		var email = $('#inputEmail').val();
 		var password = $('#inputPassword').val();
@@ -24,10 +24,17 @@ function DoSignIn(){
 			  cache: false,
 			  data: {'username':email, 'password': password},
 			  success: function (data, status) {
-				  alert("welDone");
+				  if(data.UserId == 0)
+				  {
+					  $("#spanAccountError").removeClass('hide');
+					  return false;
+				  }
+				  $("#spanAccountError").addClass('hide');
+				  
 			  },
 			  error: function (xhr, desc, err) {
-				  alert(desc);
+				  $("#spanAccountError").removeClass('hide');
+				  return false;
 			  }
 	     });
 	}	
@@ -39,14 +46,26 @@ function DoSignIn(){
 function ValidateEmail()
 {
 	var email = $('#inputEmail').val();
-    var pattern=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
-    if(pattern.test(email)){         
+    if(isEmail(email)){         
         $('#emailControl').removeClass('error');
         $('#spanEmailError').addClass('hide');
 		return true;  
     }
     $('#emailControl').addClass('error');
     $('#spanEmailError').removeClass('hide');
+    return false;
+ }
+
+function ValidatePassword()
+{
+	var password = $('#inputPassword').val();
+    if(!isEmpty(password)){         
+        $('#passwordControl').removeClass('error');
+        $('#spanPasswordError').addClass('hide');
+		return true;  
+    }
+    $('#passwordControl').addClass('error');
+    $('#spanPasswordError').removeClass('hide');
     return false;
  }
 
