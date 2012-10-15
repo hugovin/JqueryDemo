@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	BindActions();
+	CreateSpinner('spinnerPlaceHolder');
 });
 
 function BindActions(){
@@ -18,6 +19,8 @@ function DoSignIn(){
 	{
 		var email = $('#inputEmail').val();
 		var password = $('#inputPassword').val();
+		$("#btnSignIn").attr("disabled", "disabled");
+		$("#divSpinner").removeClass('hide');
 		$.ajax({
 			  url: './Login',
 			  type: 'GET',
@@ -27,13 +30,19 @@ function DoSignIn(){
 				  if(data.UserId == 0)
 				  {
 					  $("#spanAccountError").removeClass('hide');
+					  $("#divSpinner").addClass('hide');
+					  $("#btnSignIn").removeAttr("disabled");  
 					  return false;
 				  }
+				  $("#btnSignIn").removeAttr("disabled");   
 				  $("#spanAccountError").addClass('hide');
+				  $("#divSpinner").addClass('hide');
 				  
 			  },
 			  error: function (xhr, desc, err) {
 				  $("#spanAccountError").removeClass('hide');
+				  $("#btnSignIn").removeAttr("disabled");   
+				  $("#divSpinner").addClass('hide');
 				  return false;
 			  }
 	     });

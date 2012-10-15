@@ -7,6 +7,19 @@
 .loginLabelsAlign{	width: 90px !important;}
 .loginControlsAlign{	margin-left: 100px !important;}
 
+.country {
+
+    padding: 4px 6px;
+    display: inline-block;
+}
+
+.country i {
+    background: url(../img/flags.png) no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+}​
+
 
 
 
