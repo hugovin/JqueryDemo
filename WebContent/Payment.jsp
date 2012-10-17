@@ -1,3 +1,4 @@
+<%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -46,15 +47,16 @@ body {
 											Information</a></li>
 									<li class="active"><a href="./Payment.jsp">Step 2 -
 											Payment</a></li>
-									<li><a href="./Confirmation.jsp">Step 3 - Confirm</a></li>
+									<li><a href="./Confirm.jsp">Step 3 - Confirm</a></li>
 
 								</ul>
+								<a class="search-button-trigger" href="./Login.jsp"><i class="icon-home"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="box">
-					<div class="tab-header">Dealer Registration</div>
+					<div class="tab-header">Payment</div>
 					<div class=" form-horizontal padded">
 						<div class="accordion" id="accordion2">
 							<div class="accordion-group">
@@ -65,9 +67,10 @@ body {
 								</div>
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
-										
-											<ul>
-												<li>
+										<div class=" form-horizontal padded">
+											<div id="carImagesControl" class="control-group">
+
+												<div class="controls">
 													<ul class="cards">
 														<li class="visa">Visa</li>
 														<li class="visa_electron">Visa Electron</li>
@@ -75,41 +78,60 @@ body {
 														<li class="maestro">Maestro</li>
 														<li class="discover">Discover</li>
 													</ul>
-												</li>
+												</div>
+											</div>
+											<div id="cardNameControl" class="control-group">
+												<label class="control-label " for="name_on_card">Name
+													on card</label>
+												<div class="controls">
+													<input type="text" name="name_on_card" id="name_on_card"
+														placeholder="John Doe"> <span id="spanNameError"
+														class="help-inline hide"></span>
+												</div>
+											</div>
+											<div id="cardControl" class="control-group">
+												<label class="control-label" for="card_number">Card
+													Number</label>
+												<div class="controls">
+													<input type="text" class="input-large" name="card_number"
+														id="card_number" placeholder="0000 0000 0000 0000">
+													<span id="spanCardError" class="help-inline hide">Invalid
+														Card Number</span>
+												</div>
+											</div>
+											<div id="expireControl" class="control-group">
+												<label class="control-label " for="expiry_date">Expiry
+													date <small>mm/yy</small>
+												</label>
+												<div class="controls">
+													<input type="text" placeholder="mm/yy" name="expiry_date"
+														id="expiry_date" maxlength="5" class=""> <span
+														id="spanExpireError" class="help-inline hide"></span>
+												</div>
+											</div>
+											<div id="ccvControl" class="control-group">
+												<label class="control-label " for="cvv">CVV</label>
+												<div class="controls">
+													<input type="text" name="cvv" placeholder="000" id="cvv"
+														maxlength="3" class=""> <span id="spanCcvError"
+														class="help-inline hide"></span>
+												</div>
+											</div>
 
-												<li><label for="card_number">Card number</label> <input
-													type="text" name="card_number" id="card_number"></li>
+											<div class="control-group">
+												<div class="controls">
+													<button id="btnSignIn" class="button blue">Pay Now</button>
+													<span id="spanAccountError" class="help-inline hide error">Unable
+														to Validate this Card</span>
 
-												<li class="vertical">
-													<ul>
-														<li><label for="expiry_date">Expiry date <small>mm/yy</small></label>
-															<input type="text" name="expiry_date" id="expiry_date"
-															maxlength="5"></li>
+												</div>
+												<div id="divSpinner" class="row span1 hide">
+													<div class="span4" id="spinnerPlaceHolder"></div>
+												</div>
+											</div>
+										</div>
 
-														<li><label for="cvv">CVV</label> <input type="text"
-															name="cvv" id="cvv" maxlength="3"></li>
-													</ul>
-												</li>
 
-												<li class="vertical maestro"
-													style="display: none; opacity: 0;">
-													<ul>
-														<li><label for="issue_date">Issue date <small>mm/yy</small></label>
-															<input type="text" name="issue_date" id="issue_date"
-															maxlength="5"></li>
-
-														<li><span class="or">or</span> <label
-															for="issue_number">Issue number</label> <input
-															type="text" name="issue_number" id="issue_number"
-															maxlength="2"></li>
-													</ul>
-												</li>
-
-												<li><label for="name_on_card">Name on card</label> <input
-													type="text" name="name_on_card" id="name_on_card">
-												</li>
-											</ul>
-										
 									</div>
 								</div>
 							</div>
@@ -120,17 +142,38 @@ body {
 										Check</a>
 								</div>
 								<div id="collapseTwo" class="accordion-body collapse">
-									<div class="accordion-inner">Anim pariatur cliche...</div>
-								</div>
-							</div>
-							<div class="accordion-group">
-								<div class="tab-header">
-									<a class="accordion-toggle" data-toggle="collapse"
-										data-parent="#accordion2" href="#collapseTwo">Pay Purchase
-										Order</a>
-								</div>
-								<div id="collapseTwo" class="accordion-body collapse">
-									<div class="accordion-inner">Anim pariatur cliche...</div>
+									<div class="accordion-inner">
+										<div class=" form-horizontal padded">
+											<div id="payWithControl" class="control-group">
+												<label class="control-label " for="">Send your check
+													to:</label>
+												<div class="controls">
+													<address>
+														<strong>Neustar .</strong><br>21575 Ridgetop Circle <br>
+														Sterling, VA 20166<br> <abbr title="Phone">P:</abbr>
+														+1 (571) 434 5400
+													</address>
+
+													<address>
+														<strong>Support</strong><br> <a
+															href="mailto:corporatesupport@neustar.biz">corporatesupport@neustar.biz</a>
+													</address>
+												</div>
+												<div class="control-group">
+													<div class="controls">
+														<button id="btnPayCheck" class="button blue">I will send
+															the check</button>
+														<span id="spanAccountError" class="help-inline hide error">Unable
+															to Validate this Card</span>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<blockquote>
+											<small>Send it within the next 30 days</small>
+										</blockquote>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -160,7 +203,7 @@ body {
 	<script src="resources/js/jquery.creditCardValidator.js"></script>
 	<script src="resources/js/Payment.js"></script>
 	<script src="resources/js/utils.js"></script>
-		
+
 
 
 </body>

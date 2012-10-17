@@ -48,9 +48,10 @@ body {
 											Information</a></li>
 									<li ><a href="./Payment.jsp">Step 2 -
 											Payment</a></li>
-									<li><a href="./Confirmation.jsp">Step 3 - Confirm</a></li>
+									<li><a href="./Confirm.jsp">Step 3 - Confirm</a></li>
 
 								</ul>
+								<a class="search-button-trigger" href="./Login.jsp"><i class="icon-home"></i></a>
 							</div>
 						</div>
 					</div>
