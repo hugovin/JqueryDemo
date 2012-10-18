@@ -10,6 +10,7 @@ function isEmpty(str){
 	return (!str || 0 === str.length);
 }
 
+
 function CreateSpinner(div){
 	var opts = {
 			  lines: 13, // The number of lines to draw
@@ -31,3 +32,4 @@ function CreateSpinner(div){
 			var target = document.getElementById(div);
 			var spinner = new Spinner(opts).spin(target);
 }
+

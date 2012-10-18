@@ -50,7 +50,8 @@ body {
 									<li><a href="./Confirm.jsp">Step 3 - Confirm</a></li>
 
 								</ul>
-								<a class="search-button-trigger" href="./Login.jsp"><i class="icon-home"></i></a>
+								<a class="search-button-trigger" href="./Login.jsp"><i
+									class="icon-home"></i></a>
 							</div>
 						</div>
 					</div>
@@ -86,7 +87,7 @@ body {
 												<div class="controls">
 													<input type="text" name="name_on_card" id="name_on_card"
 														placeholder="John Doe"> <span id="spanNameError"
-														class="help-inline hide"></span>
+														class="help-inline hide">*Required field</span>
 												</div>
 											</div>
 											<div id="cardControl" class="control-group">
@@ -104,9 +105,35 @@ body {
 													date <small>mm/yy</small>
 												</label>
 												<div class="controls">
-													<input type="text" placeholder="mm/yy" name="expiry_date"
-														id="expiry_date" maxlength="5" class=""> <span
-														id="spanExpireError" class="help-inline hide"></span>
+													<span class="">Month: </span><select
+														name="cardExpMonth" id="cardExpMonth" class="help-inline input-mini"
+														size="1">
+														<option value="01" selected>01</option>
+														<option value="02">02</option>
+														<option value="03">03</option>
+														<option value="04">04</option>
+														<option value="05">05</option>
+														<option value="06">06</option>
+														<option value="07">07</option>
+														<option value="08">08</option>
+														<option value="09">09</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select> <span class="">Year:</span> <select
+														name="ccyear" id="year" class="help-inline span1">
+														<option value="2012">2012</option>
+														<option value="2013">2013</option>
+														<option value="2014">2014</option>
+														<option value="2015">2015</option>
+														<option value="2015">2016</option>
+														<option value="2015">2017</option>
+														<option value="2015">2018</option>
+														<option value="2015">2019</option>
+														<option value="2015">2020</option>
+														<option value="2015">2021</option>
+													</select> 
+													<span id="spanExpireError" class="help-inline hide"></span>
 												</div>
 											</div>
 											<div id="ccvControl" class="control-group">
@@ -161,8 +188,8 @@ body {
 												</div>
 												<div class="control-group">
 													<div class="controls">
-														<button id="btnPayCheck" class="button blue">I will send
-															the check</button>
+														<button id="btnPayCheck" class="button blue">I
+															will send the check</button>
 														<span id="spanAccountError" class="help-inline hide error">Unable
 															to Validate this Card</span>
 

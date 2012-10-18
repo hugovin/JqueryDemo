@@ -175,7 +175,7 @@ body {
 							<div class="controls">
 								<input type="text" name="eSign" placeholder="XXX" id="eSign"
 									maxlength="3" class="input-mini"> <span id="spanSignInError"
-									class="help-inline hide"></span>
+									class="help-inline hide">*Required Field</span>
 							</div>
 						</div>
 

@@ -58,7 +58,7 @@ body {
 				</div>
 				<div class="box">
 					<div class="tab-header">Dealer Registration</div>
-					<div class=" form-horizontal padded">
+					<div id="testform" class=" form-horizontal padded">
 						<section>
 							<legend>Login Information</legend>
 							<div id="emailControl" class="control-group">
@@ -94,22 +94,21 @@ body {
 									User</label>
 								<div class="controls ">
 									<input type="text" id="inputUser" placeholder="User"> <span
-										id="spanUserError" class="help-inline hide"></span>
+										id="spanUserError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="dealerControl" class="control-group">
 								<label class="control-label" for="inputDealer">Dealer Id</label>
 								<div class="controls ">
 									<input type="text" id="inputDealer" placeholder="Dealer Id">
-									<span id="spanDealerError" class="help-inline hide">Dealer
-										cannot be empty</span>
+									<span id="spanDealerError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="companyControl" class="control-group">
 								<label class="control-label" for="inputCompany">Company</label>
 								<div class="controls ">
 									<input type="text" id="inputCompany" placeholder="Company">
-									<span id="spanCompanyError" class="help-inline hide"></span>
+									<span id="spanCompanyError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="webControl" class="control-group">
@@ -117,7 +116,7 @@ body {
 								<div class="controls ">
 									<input type="text" id="inputWebSite"
 										placeholder="www.yourcompany.com"> <span
-										id="spanWebError" class="help-inline hide"></span>
+										id="spanWebError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 
@@ -126,27 +125,27 @@ body {
 									Number</label>
 								<div class="controls ">
 									<input type="text" id="inputPhone" placeholder="000 000 0000">
-									<span id="spanPhoneError" class="help-inline hide"></span>
+									<span id="spanPhoneError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="streetControl" class="control-group">
 								<label class="control-label" for="inputStreet">Street</label>
 								<div class="controls ">
 									<input type="text" id="inputStreet" placeholder="Street">
-									<span id="spanStreetError" class="help-inline hide"></span>
+									<span id="spanStreetError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="cityControl" class="control-group">
-								<label class="control-label" for="inputCity">Street</label>
+								<label class="control-label" for="inputCity">City</label>
 								<div class="controls ">
 									<input type="text" id="inputCity" placeholder="City"> <span
-										id="spanCityError" class="help-inline hide"></span>
+										id="spanCityError" class="help-inline hide">*Required field</span>
 								</div>
 							</div>
 							<div id="zipControl" class="control-group">
 								<label class="control-label" for="inputZip">Zip Code</label>
 								<div class="controls ">
-									<input type="text" id="inputZip" placeholder="00000"> <span
+									<input type="text" id="inputZip" maxlength="5" placeholder="00000"> <span
 										id="spanZipError" class="help-inline hide"></span>
 								</div>
 							</div>
@@ -169,7 +168,7 @@ body {
 								</div>
 							</div>
 							<div class="form-actions">
-								<button type="button" class="button blue">Save and
+								<button id="btnSave" type="button" class="button blue">Save and
 									Continue</button>
 								<button type="button" id="btnClear" class="button red">Clear</button>
 							</div>
