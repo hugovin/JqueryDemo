@@ -64,7 +64,7 @@ CREATE TABLE `pso_login` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_log_status_idx` (`status`),
   CONSTRAINT `fk_log_status` FOREIGN KEY (`status`) REFERENCES `pso_login_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `pso_login` (
 
 LOCK TABLES `pso_login` WRITE;
 /*!40000 ALTER TABLE `pso_login` DISABLE KEYS */;
-INSERT INTO `pso_login` VALUES (1,'hugovin@gmail.com','hvb123456',2),(2,'John','1234',2),(3,'John6','1234',2);
+INSERT INTO `pso_login` VALUES (6,'john@doe.com','1234',2);
 /*!40000 ALTER TABLE `pso_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,9 +203,9 @@ CREATE TABLE `pso_user_membership` (
   UNIQUE KEY `login_id_UNIQUE` (`login_id`),
   KEY `fk_login_idx` (`login_id`),
   KEY `fk_reg_steps_idx` (`reg_step`),
-  CONSTRAINT `fk_reg_steps` FOREIGN KEY (`reg_step`) REFERENCES `pso_reg_steps` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_login` FOREIGN KEY (`login_id`) REFERENCES `pso_login` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `fk_login` FOREIGN KEY (`login_id`) REFERENCES `pso_login` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_reg_steps` FOREIGN KEY (`reg_step`) REFERENCES `pso_reg_steps` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,6 +214,7 @@ CREATE TABLE `pso_user_membership` (
 
 LOCK TABLES `pso_user_membership` WRITE;
 /*!40000 ALTER TABLE `pso_user_membership` DISABLE KEYS */;
+INSERT INTO `pso_user_membership` VALUES (3,6,'john','Company','www.gmail.com','1231231234','miami','home','33122','US','Hello',2);
 /*!40000 ALTER TABLE `pso_user_membership` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,4 +252,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-10-22 23:37:33
+-- Dump completed on 2012-10-23 11:44:26
