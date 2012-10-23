@@ -10,9 +10,6 @@ function BindActions() {
 		ValidateCCV();
 	});
 	
-	$('#card_number').blur(function(){
-		ValidateCardNunber();
-	});
 	
 }
 

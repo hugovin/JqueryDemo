@@ -37,6 +37,8 @@ function DoSignIn(){
 				  $("#btnSignIn").removeAttr("disabled");   
 				  $("#spanAccountError").addClass('hide');
 				  $("#divSpinner").addClass('hide');
+				  var href = "./Dashboard.jsp";
+				  window.location = href;
 				  
 			  },
 			  error: function (xhr, desc, err) {
