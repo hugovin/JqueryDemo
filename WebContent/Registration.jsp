@@ -172,6 +172,9 @@ body {
 									Continue</button>
 								<button type="button" id="btnClear" class="button red">Clear</button>
 							</div>
+							<div id="divSpinner" class="row span1 hide">
+								<div class="span4" id="spinnerPlaceHolder"></div>
+							</div>							
 						</section>
 					</div>
 				</div>
@@ -195,8 +198,9 @@ body {
 
 	<script src="resources/js/main.js"></script>
 	<script src="resources/js/Registration.js"></script>
+	<script src="resources/js/spin.js"></script>
 	<script src="resources/js/utils.js"></script>
-
+		
 
 </body>
 </html>

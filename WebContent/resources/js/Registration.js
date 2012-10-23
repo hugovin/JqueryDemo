@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	BindActions();
+	CreateSpinner('spinnerPlaceHolder');
 });
 
 function BindActions() {
@@ -64,6 +65,8 @@ function doRegistration(){
 		var zipCode = $('#inputZip').val();
 		var country = $('#selectCountry option:selected').val();
 		var remarks =  $('#areaRemarks').val();
+		$('#btnSave').attr("disabled", "disabled");
+		$("#divSpinner").removeClass('hide');
 		$.ajax({
 			url : './Registration',
 			type : 'POST',
@@ -83,11 +86,14 @@ function doRegistration(){
 				
 			},
 			success : function(data, status) {
-				
-
+				  $("#divSpinner").addClass('hide');
+				  $("#btnSave").removeAttr("disabled");  
+				  var href = "./Payment.jsp";
+				  window.location = href;
 			},
 			error : function(xhr, desc, err) {
-
+				  $("#divSpinner").addClass('hide');
+				  $("#btnSave").removeAttr("disabled");  
 			}
 		});	
 		

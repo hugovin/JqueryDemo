@@ -181,7 +181,7 @@ body {
 
 						<div class="control-group">
 							<div class="controls">
-								<button id="btnConfirm" name="btnConfirm" class="btn btn-small">Accept & Confirm</button>
+								<button id="btnConfirm" name="btnConfirm" class="btn btn-small">Accept and Confirm</button>
 								<span id="spanAccountError" class="help-inline hide error">Unable
 									to Validate this Card</span>
 
