@@ -13,5 +13,20 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/activiti-cxf-5.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/activiti-engine-5.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/activiti-engine-5.10-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/jaxb-api-2.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/jaxb-impl-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/livetribe-jsr223-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/mail-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/spring-asm-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/spring-beans-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/spring-core-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juancarvajal/Documents/GitHub/JqueryDemo/WebContent/WEB-INF/lib/stax-api-1.0-2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
