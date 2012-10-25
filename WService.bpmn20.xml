@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="Yaoqiang BPMN Editor" exporterVersion="2.1.4" expressionLanguage="http://www.w3.org/1999/XPath" id="_1351052136330" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <process id="WService" isClosed="false" name="WService" processType="None">
+    <userTask activiti:assignee="kermit" completionQuantity="1" id="usertask1" implementation="##unspecified" isForCompensation="false" name="Validate Dealer Form" startQuantity="1">
+      <extensionElements>
+        <activiti:formProperty id="validate dealer form" name="status test" readable="true" required="true" type="enum" variable="status" writable="true">
+          <activiti:value id="accepted" name="accepted"/>
+          <activiti:value id="rejected" name="rejected"/>
+          <activiti:value id="moreinfo" name="moreinfo"/>
+        </activiti:formProperty>
+      </extensionElements>
+      <incoming>flow4</incoming>
+      <outgoing>_3</outgoing>
+    </userTask>
+    <startEvent id="startevent1" isInterrupting="true" name="Start" parallelMultiple="false">
+      <outgoing>flow4</outgoing>
+    </startEvent>
+    <sequenceFlow id="flow4" sourceRef="startevent1" targetRef="usertask1"/>
+    <endEvent id="endevent3" name="End">
+      <incoming>_3</incoming>
+    </endEvent>
+    <sequenceFlow id="_3" sourceRef="usertask1" targetRef="endevent3"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=597.6;height=842.4;imageableWidth=587.6;imageableHeight=832.4;imageableX=5.0;imageableY=5.0" id="Yaoqiang_Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="WService">
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="Yaoqiang-usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="66.0" y="210.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="55.0" width="105.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="Yaoqiang-startevent1">
+        <omgdc:Bounds height="32.0" width="32.0" x="6.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="32.0" width="32.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent3" id="Yaoqiang-endevent3">
+        <omgdc:Bounds height="32.0" width="32.0" x="225.0" y="221.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="32.0" width="32.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_3" id="Yaoqiang-_3" sourceElement="usertask1" targetElement="endevent3">
+        <omgdi:waypoint x="171.16666666666663" y="237.5"/>
+        <omgdi:waypoint x="224.5015326399493" y="237.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="Yaoqiang-flow4" sourceElement="startevent1" targetElement="usertask1">
+        <omgdi:waypoint x="37.83295018701496" y="235.99999999999994"/>
+        <omgdi:waypoint x="65.61111111111109" y="237.5"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
