@@ -147,7 +147,7 @@ body {
 
 											<div class="control-group">
 												<div class="controls">
-													<button id="btnSignIn" class="button blue">Pay Now</button>
+													<button id="btnCC" class="button blue">Pay Now</button>
 													<span id="spanAccountError" class="help-inline hide error">Unable
 														to Validate this Card</span>
 

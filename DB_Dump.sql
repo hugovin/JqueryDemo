@@ -18,6 +18,34 @@ USE `pso_demo_jquery`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `pso_checks`
+--
+
+DROP TABLE IF EXISTS `pso_checks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pso_checks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_payment_id` int(11) NOT NULL,
+  `check_number` varchar(45) DEFAULT NULL,
+  `due_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_payment_id_idx` (`user_payment_id`),
+  CONSTRAINT `fk_payment_id` FOREIGN KEY (`user_payment_id`) REFERENCES `pso_user_payment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pso_checks`
+--
+
+LOCK TABLES `pso_checks` WRITE;
+/*!40000 ALTER TABLE `pso_checks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pso_checks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pso_credit_cards`
 --
 
@@ -252,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-10-23 11:44:26
+-- Dump completed on 2012-10-25  1:05:22

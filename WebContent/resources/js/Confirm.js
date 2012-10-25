@@ -16,10 +16,22 @@ $(document).ready(function() {
 											.addClass("button blue");
 								}
 							});
+					
+	BindActions();
+});
+
+function BindActions(){
 	 $('#eSign').blur(function(){
 		 ValidateAnyEmpty('eSign','electronicControl','spanSignInError'); 
 	 });
-});
+	 $('#btnConfirm').bind('click',function(){
+		 SendConfirm();
+	 });
+}
+
+function SendConfirm(){
+	
+}
 
 
 function ValidateAnyEmpty(inputId, fieldControl, spanError) {

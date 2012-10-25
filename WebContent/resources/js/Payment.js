@@ -9,8 +9,29 @@ function BindActions() {
 	$('#cvv').blur(function() {
 		ValidateCCV();
 	});
+	$('#btnCC').bind('click',function(){
+		SendPaymentCC();
+	});
+	
+	$('#btnPayCheck').bind('click',function(){
+		SenPaymentcheck();
+	});
 	
 	
+	
+}
+
+
+function SendPaymentCC(){
+	if(ValidateAnyEmpty('name_on_card', 'cardNameControl', 'spanNameError') && ValidateCCV() && ValidateCardNunber()){
+		  var href = "./Confirm.jsp";
+		  window.location = href;
+	}
+}
+
+function SenPaymentcheck(){
+	  var href = "./Confirm.jsp";
+	  window.location = href;
 }
 
 function ValidateCardNunber(){
