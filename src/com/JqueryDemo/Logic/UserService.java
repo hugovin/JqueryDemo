@@ -287,5 +287,42 @@ public class UserService {
 		activiti.CreateNewActivitiAprovalProcess();
 		return true;
 	}
+	
+	public String GetMembershipUserName(int loginId){
+		ConnectMySql connectMySql = new ConnectMySql();
+		String userName ="";
+		try {
+			Connection con = connectMySql.OpenConnection();
+			Statement st = con.createStatement();
+			String query = "SELECT user FROM pso_demo_jquery.pso_user_membership WHERE login_id = "
+					+ loginId + "";
+			ResultSet rs = st.executeQuery(query);
+
+			try {
+				while (rs.next()) {
+					userName = rs.getString(1);
+				}
+			} catch (Exception e) {
+				userName = "";
+			}
+			connectMySql.CloseConnection();
+
+		} catch (Exception e) {
+			try {
+				connectMySql.CloseConnection();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			return userName;
+		}
+		try {
+			connectMySql.CloseConnection();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userName;
+	}
 
 }

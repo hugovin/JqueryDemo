@@ -1,3 +1,4 @@
+<%@page import="com.JqueryDemo.Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,6 +26,7 @@ body {
 <meta name="viewport"
 	content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
 </head>
+
 <body>
 
 	<nav id="secondary" class="main-nav black-box"
@@ -39,7 +41,7 @@ body {
 			</div>
 
 			<div class="pull-left">
-				<div class="title">User</div>
+				<div class="title">Username</div>
 				<div class="btn-group">
 					<button class="button mini inset black">
 						<i class="icon-search"></i>

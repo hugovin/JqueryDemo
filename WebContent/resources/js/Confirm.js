@@ -30,7 +30,24 @@ function BindActions(){
 }
 
 function SendConfirm(){
-	
+	if(ValidateAnyEmpty('eSign','electronicControl','spanSignInError'))
+	{
+
+		$.ajax({
+			  url: './Confirm',
+			  type: 'GET',
+			  cache: false,
+			  data: {},
+			  success: function (data, status) {
+				  var href = "./Dashboard.jsp";
+				  window.location = href;
+				  
+			  },
+			  error: function (xhr, desc, err) {
+				  return false;
+			  }
+	     });
+	}	
 }
 
 
